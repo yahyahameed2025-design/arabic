@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>لغتنا العربية — الصف الثالث الإعدادي</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f6f3ec; --card:#ffffff; --ink:#1f2a37; --muted:#6b7280;
+    --brand:#0f766e; --brand-2:#14b8a6; --soft:#e6f4f1;
+    --yt:#e11d48; --form:#6d28d9; --line:#e5e7eb;
+    --radius:18px; --shadow:0 2px 10px rgba(15,23,42,.06);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{font-family:'Tajawal',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;min-height:100vh}
+  header{
+    background:linear-gradient(135deg,var(--brand),#0b4f4a);
+    color:#fff;padding:28px 18px 22px;border-radius:0 0 28px 28px;
+    box-shadow:0 8px 24px rgba(15,118,110,.25);
+  }
+  header h1{font-size:1.6rem;font-weight:800;letter-spacing:-.2px}
+  header p{opacity:.9;font-size:.95rem;margin-top:4px}
+  .chip{display:inline-block;margin-top:12px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.3);
+    padding:5px 12px;border-radius:999px;font-size:.85rem;color:#fff;text-decoration:none}
+  main{max-width:720px;margin:0 auto;padding:16px 14px 20px}
+  .search{position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 0 8px}
+  .search input{
+    width:100%;padding:13px 16px;border-radius:14px;border:1.5px solid var(--line);background:#fff;
+    font:inherit;font-size:1rem;color:var(--ink);box-shadow:var(--shadow);outline:none
+  }
+  .search input:focus{border-color:var(--brand-2)}
+  .section{margin:22px 0 10px;font-size:.85rem;font-weight:700;color:var(--muted);letter-spacing:.5px;display:flex;align-items:center;gap:8px}
+  .section::after{content:"";flex:1;height:1px;background:var(--line)}
+  .lesson{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:10px;overflow:hidden;border:1px solid transparent;transition:border-color .2s}
+  .lesson.open{border-color:var(--brand-2)}
+  .head{
+    width:100%;display:flex;align-items:center;gap:12px;padding:14px 14px;
+    background:none;border:0;font:inherit;color:inherit;text-align:right;cursor:pointer;-webkit-tap-highlight-color:transparent
+  }
+  .num{flex:none;width:36px;height:36px;border-radius:12px;background:var(--soft);color:var(--brand);
+    display:grid;place-items:center;font-weight:800;font-size:.95rem}
+  .title{flex:1;font-weight:700;font-size:1.05rem}
+  .meta{font-size:.78rem;color:var(--muted);font-weight:500;margin-top:1px}
+  .arrow{flex:none;width:22px;height:22px;color:var(--muted);transition:transform .25s}
+  .lesson.open .arrow{transform:rotate(180deg);color:var(--brand)}
+  .body{display:none;padding:0 14px 14px;border-top:1px dashed var(--line)}
+  .lesson.open .body{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+  .link{
+    display:flex;align-items:center;gap:12px;padding:12px;margin-top:10px;border-radius:14px;
+    text-decoration:none;color:var(--ink);background:#fafaf7;border:1px solid var(--line);
+    transition:transform .12s,background .2s
+  }
+  .link:active{transform:scale(.985)}
+  .link .ic{flex:none;width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff}
+  .link.video .ic{background:var(--yt)}
+  .link.form .ic{background:var(--form)}
+  .link .t{flex:1;font-weight:600;font-size:.98rem}
+  .link .k{font-size:.75rem;color:var(--muted);font-weight:500;display:block}
+  .link .go{color:var(--muted);flex:none}
+  .step{flex:none;font-size:.75rem;font-weight:800;color:var(--muted);width:18px;text-align:center}
+  .empty{display:none;text-align:center;color:var(--muted);padding:40px 0}
+  footer{text-align:center;color:var(--muted);font-size:.8rem;padding:20px}
+  footer a{color:var(--brand);text-decoration:none;font-weight:700}
+  .credit{position:fixed;bottom:0;left:0;right:0;z-index:10;background:linear-gradient(135deg,#0b4f4a,var(--brand));color:#fff;
+    padding:8px 14px calc(8px + env(safe-area-inset-bottom));text-align:center;box-shadow:0 -4px 16px rgba(15,23,42,.15)}
+  .credit .dev{font-size:.95rem;font-weight:700;line-height:1.4}
+  .credit .dev b{font-weight:800;color:#a7f3d0}
+  .credit hr{border:0;height:1px;background:rgba(255,255,255,.35);margin:5px auto;max-width:720px}
+  .credit .rights{font-size:.78rem;opacity:.9;line-height:1.4}
+  body{padding-bottom:84px}
+</style>
+</head>
+<body>
+<header>
+  <h1>لغتنا العربية</h1>
+  <p>يتم شرح هذه الدروس بفضل الأستاذ عبدالشهيد الشراح فادعوا له بالخير</p>
+  <a class="chip" href="https://youtube.com/@yahyapy-x1k?si=PF8fHKSTslqa93C2" target="_blank" rel="noopener">▶ قناة اليوتيوب</a>
+</header>
+
+<main>
+  <div class="search"><input id="q" type="search" placeholder="ابحث عن درس… (مثال: الحال، الشرط، قصيدة)"></div>
+  <div id="list"></div>
+  <p class="empty" id="empty">لا توجد نتائج</p>
+</main>
+
+<footer>الفيديوهات من قناة <a href="https://youtube.com/@yahyapy-x1k?si=PF8fHKSTslqa93C2" target="_blank" rel="noopener">لغتنا العربية</a></footer>
+<div class="credit">
+  <p class="dev">برمجة الطالب : <b>يحيى حميد</b></p>
+  <hr>
+  <p class="rights">&copy; جميع حقوق النشر محفوظة</p>
+</div>
+
+<script>
+const YT = id => "https://www.youtube.com/watch?v=" + id;
+const GF = id => "https://docs.google.com/forms/d/e/" + id + "/viewform";
+const V = (t,id)=>({type:"video",t,u:YT(id)});
+const F = (t,id)=>({type:"form",t,u:GF(id)});
+
+const sections = [
+ {name:"النحو", lessons:[
+  {t:"المفعول المطلق", links:[V("شرح الدرس","bbDI6O3OBSE")]},
+  {t:"المفعول معه", links:[V("شرح الدرس","U8LM4c3GONc")]},
+  {t:"الحال", links:[V("الحال — الجزء 1","NNtEyJEibG0"),V("الحال — الجزء 2","SjTOtpkuZ3I")]},
+  {t:"اللازم والمتعدي", links:[V("شرح الدرس","ZqgPRrTA248")]},
+  {t:"ظرفا الزمان والمكان", links:[V("شرح الدرس","Leyhg6ijpVg")]},
+  {t:"الاستثناء بإلا", links:[V("شرح الدرس","PbjGZ3d_OEI"),F("نشاط حول درس الاستثناء","1FAIpQLSccsgTMz43moGM6-vPe5quKeRBZqvnrNKkuiKaRLtBuUjG8eQ")]},
+  {t:"التمييز", links:[V("التمييز — الجزء 1","aojA2m4c8aQ"),V("التمييز — الجزء 2","Y9sVmM6MZbQ")]},
+  {t:"النداء", links:[V("شرح الدرس","XJiDiE-nryg")]},
+  {t:"مراجعة الاستثناء والنداء والتمييز", links:[V("مراجعة الدروس","KTCB_Xvv4O4")]},
+  {t:"شرح قواعد نحوية", links:[V("شرح قواعد نحوية","9UcJs6mtfrQ")]},
+  {t:"الممنوع من الصرف", links:[V("الممنوع من الصرف لعلتين — الجزء 1","oEM-aROb5DY"),V("الممنوع من الصرف لعلتين — الجزء 2","lIWzoJzMijA"),F("الممنوع من الصرف لعلة واحدة","1FAIpQLSeFW-r7vE--SOQ27u1gv9PQ5bF12n8odBMP4X5QDqwsO9FwVQ")]},
+  {t:"الممدود والمنقوص (مقدمة)", links:[V("الممدود والمنقوص","SFoOfrVtFWs")]},
+  {t:"الاسم المقصور", links:[V("المقصور تثنيته وجمعه جمعًا سالمًا","RASom9DKKAE")]},
+  {t:"الاسم المنقوص", links:[V("الاسم المنقوص","ZzP7uoCKsVM"),V("المنقوص تثنيته وجمعه","EAvSDKx8sV4"),F("تطبيق حول درس المنقوص","1FAIpQLSdXukXJvLWXx-8I3wwvMLKfc-SE9vkMB6g-EePuMxKOXIz37w"),F("المنقوص تثنيته وجمعه جمعًا سالمًا","1FAIpQLSfZK5MKj7YEooWe-2IVHpi9AxySrXhIXXeUUPV7ftMfer-V6g")]},
+  {t:"الاسم الممدود", links:[V("الاسم الممدود","a7U7tQqKzkA"),V("تثنية الممدود وجمعه جمعًا سالمًا","4iu5mSUgzlk"),F("نشاط حول درس الممدود","1FAIpQLSepG7kJsDOjgxiVSElNGZV8oQMECba2UU7CYqh2ijYzIqteTQ")]},
+  {t:"أسلوب الشرط", links:[V("أدوات الشرط","2IJ5jFh6l40"),F("أسلوب الشرط","1FAIpQLSccMECy8cbRz6h-udmPeshfUrUAAjgGlOzuobpErOJWAnqLzw")]},
+  {t:"اقتران جواب الشرط بالفاء", links:[V("اقتران حرف الفاء بجواب الشرط","QbG0_1YajXc"),F("اقتران جواب الشرط بالفاء","1FAIpQLScAKx3nB3VdUfHg34csu61fGTRq58wzTeVJ_T9HzsMWEyh23A")]},
+  {t:"أسلوب التعجب", links:[F("أسلوب التعجب","1FAIpQLSffwV0-3d4_i01ir9rx2X1GgW3eaF-lzmG7Ms912epGTL-cFQ")]},
+  {t:"أسلوب الاستفهام", links:[F("أسلوب الاستفهام","1FAIpQLSdb5j0k6YdUiRB89OILVg62cAZibIJ6szxD_L3o0Ndigx-MeA")]},
+  {t:"اسم التفضيل", links:[F("اسم التفضيل","1FAIpQLSez0A96LQGO23VdHTPkFm1uS8UjYVQHSujYhLEsLbbkNyTB5A")]},
+ ]},
+ {name:"النصوص والقصائد", lessons:[
+  {t:"قصيدة من أغاني الرعاة", links:[V("المقطع الأول","Ctfu7VSyM_I"),V("الصور الخيالية للمقطع الأول","bk-l9q2-PYc"),V("المقطع الثاني","BMIP01vRgCk"),V("من أغاني الرعاة (كاملة)","t_ie1WGFmhQ")]},
+  {t:"قصيدة عيد الأم", links:[V("شرح القصيدة","uI5x3ZzzMZg")]},
+  {t:"قصيدة موطن الخالدين", links:[V("شرح الأبيات (10–17)","Lkm5tNLM_xs")]},
+  {t:"قصيدة لا تسلْ كيف كنا", links:[V("شرح القصيدة","T27fcJIFSWI"),F("نشاط تقويمي (1)","1FAIpQLSeE7aEUKyM6cdHnstgmfJtlYYMRB43CMExQWCcSdvKXGXbS4g")]},
+  {t:"قصيدة أنتِ الهوى", links:[F("تطبيق (1)","1FAIpQLSdEe2zAkAo8BF7j5sLCCt3cprXpQ0B5l8CzeZ0Pz9dDttwK2Q"),F("تطبيق (2)","1FAIpQLScuLQ7is8kqqy7Z5I7y1fxKBMGufybjdvcGcrIiNl4nOeFZ-A"),F("تطبيق (3)","1FAIpQLSfNiNASemdyBJxMVKIK9wKEDRXB2VZ1eIOFNFvmbG2qzkrFzA")]},
+  {t:"قصيدة كُنْ بلسمًا", links:[F("تدريبات (1)","1FAIpQLSf47jhX8OIHaMLaIqdI_lYPc6e6kgXpzzdT8gXaIgKrQE0LjQ"),F("نشاط (2)","1FAIpQLSfDt61i4Bcr7FvUcGizQfIGVoBVCVl5KW1b4YPXtPdPknlyGA")]},
+  {t:"قصيدة قيم عربيّة", links:[F("نشاط تقويمي (1)","1FAIpQLSd-mTvGMRQXN_jWKOf6NSbjyQX4lVBpNeXEU66BIVwDt0o9lg")]},
+  {t:"قصيدة إن الكرام قليلٌ", links:[F("نشاط تقويمي (1)","1FAIpQLSdyaXYE3HIlbY8-F-5HlhFBW2maMvQWq3rXnKlySHrq8C7S2A")]},
+ ]},
+ {name:"التعبير والمراجعة", lessons:[
+  {t:"كتابة كلمة توعوية", links:[V("شرح الدرس","RJdAaw8trsY")]},
+  {t:"مراجعة الدروس للاختبار الثاني", links:[V("مراجعة الدروس للاختبار الثاني (2)","LAJNg_fWEx8")]},
+ ]}
+];
+
+const icoVideo = '<svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
+const icoForm  = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 11l3 3 7-7"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>';
+const arrow    = '<svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 9l6 6 6-6"/></svg>';
+const go       = '<svg class="go" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg>';
+
+const list = document.getElementById('list');
+let n = 0;
+sections.forEach(sec=>{
+  const h = document.createElement('div'); h.className='section'; h.textContent=sec.name; h.dataset.sec='1'; list.appendChild(h);
+  sec.lessons.forEach(ls=>{
+    n++;
+    const vids = ls.links.filter(l=>l.type==='video').length, forms = ls.links.filter(l=>l.type==='form').length;
+    const meta = [vids?`${vids} فيديو`:null, forms?`${forms} تطبيق`:null].filter(Boolean).join(' · ');
+    const card = document.createElement('div'); card.className='lesson';
+    card.dataset.text = (ls.t+' '+ls.links.map(l=>l.t).join(' ')).toLowerCase();
+    card.innerHTML = `
+      <button class="head" aria-expanded="false">
+        <span class="num">${n}</span>
+        <span class="title">${ls.t}<span class="meta">${meta}</span></span>
+        ${arrow}
+      </button>
+      <div class="body">
+        ${ls.links.map((l,i)=>`
+          <a class="link ${l.type}" href="${l.u}" target="_blank" rel="noopener">
+            <span class="step">${i+1}</span>
+            <span class="ic">${l.type==='video'?icoVideo:icoForm}</span>
+            <span class="t">${l.t}<span class="k">${l.type==='video'?'فيديو الشرح':'رابط الدرس / التطبيق'}</span></span>
+            ${go}
+          </a>`).join('')}
+      </div>`;
+    card.querySelector('.head').addEventListener('click',()=>{
+      const open = card.classList.toggle('open');
+      card.querySelector('.head').setAttribute('aria-expanded',open);
+    });
+    list.appendChild(card);
+  });
+});
+
+const q = document.getElementById('q'), empty = document.getElementById('empty');
+q.addEventListener('input',()=>{
+  const v = q.value.trim().toLowerCase(); let shown=0;
+  document.querySelectorAll('.lesson').forEach(c=>{ const ok=!v||c.dataset.text.includes(v); c.style.display=ok?'':'none'; if(ok) shown++; });
+  document.querySelectorAll('.section').forEach(s=>{
+    let el=s.nextElementSibling, any=false;
+    while(el && !el.classList.contains('section')){ if(el.style.display!=='none') any=true; el=el.nextElementSibling; }
+    s.style.display=any?'':'none';
+  });
+  empty.style.display=shown?'none':'block';
+});
+</script>
+</body>
+</html>
