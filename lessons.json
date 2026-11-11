@@ -201,14 +201,14 @@
  {
   "t": "شرح قواعد نحوية",
   "c": "النحو",
+  "g": "2",
   "links": [
    {
     "type": "video",
     "t": "شرح قواعد نحوية",
     "u": "https://www.youtube.com/watch?v=9UcJs6mtfrQ"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "مراجعة الاستثناء والنداء والتمييز",
@@ -281,6 +281,7 @@
  {
   "t": "الاستثناء بإلا",
   "c": "النحو",
+  "g": "both",
   "links": [
    {
     "type": "video",
@@ -292,8 +293,7 @@
     "t": "نشاط حول درس الاستثناء",
     "u": "https://docs.google.com/forms/d/e/1FAIpQLSccsgTMz43moGM6-vPe5quKeRBZqvnrNKkuiKaRLtBuUjG8eQ/viewform"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "ظرفا الزمان والمكان",
@@ -322,6 +322,7 @@
  {
   "t": "الحال",
   "c": "النحو",
+  "g": "2",
   "links": [
    {
     "type": "video",
@@ -333,8 +334,7 @@
     "t": "الحال — الجزء 2",
     "u": "https://www.youtube.com/watch?v=SjTOtpkuZ3I"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "اللازم والمتعدي",
@@ -450,14 +450,14 @@
  {
   "t": "قصيدة قيم عربيّة",
   "c": "القصائد",
+  "g": "2",
   "links": [
    {
     "type": "form",
     "t": "نشاط تقويمي (1)",
     "u": "https://docs.google.com/forms/d/e/1FAIpQLSd-mTvGMRQXN_jWKOf6NSbjyQX4lVBpNeXEU66BIVwDt0o9lg/viewform"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "قصيدة إن الكرام قليلٌ",
