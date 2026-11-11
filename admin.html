@@ -1,0 +1,300 @@
+TEST123
+line2<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>لوحة التحكم — لغتنا العربية</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#f6f3ec;--card:#fff;--ink:#1f2a37;--muted:#6b7280;--brand:#0f766e;--brand-2:#14b8a6;--soft:#e6f4f1;
+    --yt:#e11d48;--form:#6d28d9;--line:#e5e7eb;--danger:#dc2626;--radius:16px;--shadow:0 2px 10px rgba(15,23,42,.06)}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Tajawal',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;padding-bottom:90px}
+  header{background:linear-gradient(135deg,var(--brand),#0b4f4a);color:#fff;padding:22px 16px 18px;border-radius:0 0 24px 24px}
+  header h1{font-size:1.35rem;font-weight:800}
+  header p{opacity:.9;font-size:.9rem}
+  main{max-width:720px;margin:0 auto;padding:14px}
+  .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:14px;margin-bottom:12px}
+  .card h2{font-size:1.05rem;font-weight:800;margin-bottom:10px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  label{display:block;font-size:.85rem;color:var(--muted);font-weight:700;margin:10px 0 4px}
+  input,select,textarea{width:100%;padding:11px 12px;border-radius:12px;border:1.5px solid var(--line);font:inherit;font-size:1rem;background:#fff;color:var(--ink);outline:none}
+  input:focus,select:focus{border-color:var(--brand-2)}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:11px 16px;border-radius:12px;border:0;font:inherit;font-weight:800;font-size:.95rem;cursor:pointer;-webkit-tap-highlight-color:transparent}
+  .btn.primary{background:var(--brand);color:#fff}
+  .btn.ghost{background:var(--soft);color:var(--brand)}
+  .btn.danger{background:#fee2e2;color:var(--danger)}
+  .btn.sm{padding:7px 10px;font-size:.85rem;border-radius:10px}
+  .btn:disabled{opacity:.5;cursor:default}
+  .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .hint{font-size:.8rem;color:var(--muted);margin-top:6px}
+  .status{position:fixed;bottom:0;left:0;right:0;background:#111827;color:#fff;padding:12px 16px calc(12px + env(safe-area-inset-bottom));font-size:.9rem;text-align:center;z-index:20;display:none}
+  .status.show{display:block}
+  .status.ok{background:var(--brand)}
+  .status.err{background:var(--danger)}
+  /* lessons list */
+  .lesson{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);margin-bottom:10px;padding:12px 14px}
+  .lesson .top{display:flex;align-items:center;gap:10px}
+  .lesson .num{flex:none;width:30px;height:30px;border-radius:10px;background:var(--soft);color:var(--brand);display:grid;place-items:center;font-weight:800;font-size:.85rem}
+  .lesson .t{flex:1;font-weight:700}
+  .lesson .t small{display:block;color:var(--muted);font-weight:500;font-size:.78rem}
+  .lesson .ops{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+  .links{margin-top:8px;display:flex;flex-direction:column;gap:6px}
+  .lk{display:flex;align-items:center;gap:8px;font-size:.85rem;background:#fafaf7;border:1px solid var(--line);border-radius:10px;padding:6px 8px}
+  .lk .dot{width:10px;height:10px;border-radius:50%;flex:none}
+  .lk.video .dot{background:var(--yt)} .lk.form .dot{background:var(--form)}
+  .lk .lt{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .lk button{background:none;border:0;color:var(--muted);font:inherit;cursor:pointer;padding:2px 6px}
+  /* modal */
+  .overlay{position:fixed;inset:0;background:rgba(15,23,42,.45);display:none;align-items:flex-end;justify-content:center;z-index:30}
+  .overlay.show{display:flex}
+  .sheet{background:#fff;width:100%;max-width:720px;max-height:92vh;overflow:auto;border-radius:22px 22px 0 0;padding:16px 16px calc(16px + env(safe-area-inset-bottom))}
+  .sheet h3{font-size:1.1rem;font-weight:800;margin-bottom:6px}
+  .linkEdit{border:1.5px dashed var(--line);border-radius:12px;padding:10px;margin-top:10px;background:#fafaf7}
+  .linkEdit .row3{display:grid;grid-template-columns:110px 1fr;gap:8px}
+  .linkEdit .rm{float:left;color:var(--danger);background:none;border:0;font:inherit;font-weight:700;cursor:pointer}
+  .badge{font-size:.7rem;font-weight:800;padding:2px 8px;border-radius:999px;background:var(--soft);color:var(--brand)}
+  .tabs{display:flex;gap:6px;margin-bottom:12px}
+  .tabs button{flex:1;padding:10px;border-radius:12px;border:1.5px solid var(--line);background:#fff;font:inherit;font-weight:700;cursor:pointer;color:var(--muted)}
+  .tabs button.on{background:var(--brand);color:#fff;border-color:var(--brand)}
+  .hidden{display:none !important}
+  .dragh{cursor:grab;color:var(--muted);font-size:1.2rem;padding:0 4px}
+</style>
+</head>
+<body>
+<header>
+  <h1>لوحة التحكم — لغتنا العربية</h1>
+  <p>إضافة الدروس وترتيبها وحفظها مباشرة في موقع الدروس</p>
+</header>
+
+<main>
+  <div class="tabs">
+    <button id="tabLessons" class="on">الدروس</button>
+    <button id="tabSettings">الإعدادات</button>
+  </div>
+
+  <!-- ===== الإعدادات ===== -->
+  <section id="settings" class="card hidden">
+    <h2>ربط لوحة التحكم بـ GitHub <span class="badge">مرة واحدة</span></h2>
+    <label>اسم المستخدم في GitHub</label>
+    <input id="owner" placeholder="مثال: yahyahameed">
+    <label>اسم المستودع (Repository)</label>
+    <input id="repo" placeholder="مثال: arabic-lessons">
+    <div class="row">
+      <div><label>الفرع (Branch)</label><input id="branch" value="main"></div>
+      <div><label>اسم ملف البيانات</label><input id="path" value="lessons.json"></div>
+    </div>
+    <label>رمز الوصول (Personal Access Token)</label>
+    <input id="token" type="password" placeholder="github_pat_...">
+    <p class="hint">أنشئ الرمز من GitHub ← Settings ← Developer settings ← Fine-grained tokens، واختر هذا المستودع فقط مع صلاحية <b>Contents: Read and write</b>. يُحفظ الرمز في متصفحك فقط ولا يُرسل لأي جهة غير GitHub.</p>
+    <div class="actions">
+      <button class="btn primary" id="saveSettings">حفظ الإعدادات</button>
+      <button class="btn ghost" id="testConn">اختبار الاتصال</button>
+      <button class="btn danger" id="clearSettings">مسح</button>
+    </div>
+  </section>
+
+  <!-- ===== الدروس ===== -->
+  <section id="lessonsView">
+    <div class="card">
+      <h2>الدروس <span id="count" class="badge">0</span></h2>
+      <div class="actions" style="margin-top:0">
+        <button class="btn primary" id="addBtn">＋ إضافة درس جديد</button>
+        <button class="btn ghost" id="reloadBtn">⟳ تحميل من الموقع</button>
+        <button class="btn ghost" id="publishBtn" disabled>☁ نشر التغييرات</button>
+      </div>
+      <p class="hint" id="dirtyHint">لا توجد تغييرات غير منشورة.</p>
+      <input id="search" placeholder="بحث سريع في الدروس…" style="margin-top:10px">
+    </div>
+    <div id="list"></div>
+  </section>
+</main>
+
+<!-- ===== نافذة إضافة / تعديل ===== -->
+<div class="overlay" id="overlay">
+  <div class="sheet">
+    <h3 id="sheetTitle">إضافة درس</h3>
+    <label>عنوان الدرس</label>
+    <input id="fTitle" placeholder="مثال: الحال">
+    <div class="row">
+      <div>
+        <label>التصنيف</label>
+        <select id="fCat">
+          <option>النحو</option><option>القصائد</option><option>التعبير</option><option>مراجعة</option><option>أخرى</option>
+        </select>
+      </div>
+      <div>
+        <label>الموضع</label>
+        <select id="fPos"><option value="top">في الأعلى (الأحدث)</option><option value="bottom">في الأسفل</option></select>
+      </div>
+    </div>
+    <label>الروابط (بالترتيب: الفيديو أولًا ثم رابط الدرس)</label>
+    <div id="fLinks"></div>
+    <div class="actions" style="margin-top:8px">
+      <button class="btn ghost sm" id="addVideo">＋ فيديو</button>
+      <button class="btn ghost sm" id="addForm">＋ رابط درس / تطبيق</button>
+    </div>
+    <div class="actions">
+      <button class="btn primary" id="fSave">حفظ الدرس</button>
+      <button class="btn ghost" id="fCancel">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+<div class="status" id="status"></div>
+
+<script>
+/* ---------- الإعدادات ---------- */
+const S = {
+  get(){ try{ return JSON.parse(localStorage.getItem('gh_settings')||'{}'); }catch(e){ return {}; } },
+  set(v){ try{ localStorage.setItem('gh_settings',JSON.stringify(v)); }catch(e){} }
+};
+const $ = id => document.getElementById(id);
+function loadSettingsUI(){ const s=S.get(); ['owner','repo','branch','path','token'].forEach(k=>{ if(s[k]!==undefined) $(k).value=s[k]; }); }
+function readSettingsUI(){ return {owner:$('owner').value.trim(),repo:$('repo').value.trim(),branch:$('branch').value.trim()||'main',path:$('path').value.trim()||'lessons.json',token:$('token').value.trim()}; }
+function ready(){ const s=S.get(); return s.owner&&s.repo&&s.token; }
+
+/* ---------- حالة ---------- */
+let lessons = [], sha = null, dirty = false, editIndex = -1;
+function toast(msg,type){ const el=$('status'); el.textContent=msg; el.className='status show '+(type||''); clearTimeout(el._t); el._t=setTimeout(()=>el.className='status',3500); }
+function setDirty(v){ dirty=v; $('publishBtn').disabled=!v; $('dirtyHint').textContent = v?'⚠ لديك تغييرات غير منشورة — اضغط "نشر التغييرات" لتظهر في الموقع.':'لا توجد تغييرات غير منشورة.'; }
+
+/* ---------- GitHub API ---------- */
+const b64enc = str => btoa(unescape(encodeURIComponent(str)));
+const b64dec = str => decodeURIComponent(escape(atob(str.replace(/\n/g,''))));
+function apiUrl(){ const s=S.get(); return `https://api.github.com/repos/${s.owner}/${s.repo}/contents/${s.path}`; }
+function headers(){ return {'Authorization':'Bearer '+S.get().token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}; }
+
+async function loadFromGitHub(){
+  if(!ready()){ toast('أكمل الإعدادات أولًا','err'); showTab('settings'); return; }
+  toast('جارٍ التحميل…');
+  const r = await fetch(apiUrl()+'?ref='+encodeURIComponent(S.get().branch)+'&t='+Date.now(),{headers:headers(),cache:'no-store'});
+  if(r.status===404){ lessons=[]; sha=null; render(); setDirty(false); toast('الملف غير موجود بعد — سيُنشأ عند أول نشر','ok'); return; }
+  if(!r.ok){ toast('فشل التحميل: '+r.status+' — تأكد من الإعدادات والرمز','err'); return; }
+  const j = await r.json(); sha=j.sha;
+  try{ lessons = JSON.parse(b64dec(j.content)); }catch(e){ lessons=[]; }
+  render(); setDirty(false); toast('تم التحميل: '+lessons.length+' درسًا','ok');
+}
+async function publish(){
+  if(!ready()){ toast('أكمل الإعدادات أولًا','err'); return; }
+  $('publishBtn').disabled=true; toast('جارٍ النشر…');
+  const body = { message:'تحديث الدروس من لوحة التحكم ('+new Date().toLocaleString('ar-EG')+')', content:b64enc(JSON.stringify(lessons,null,1)), branch:S.get().branch };
+  if(sha) body.sha=sha;
+  const r = await fetch(apiUrl(),{method:'PUT',headers:{...headers(),'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!r.ok){ const t=await r.text(); toast('فشل النشر: '+r.status+(r.status===409?' — الملف تغيّر، اضغط تحميل ثم أعد المحاولة':''),'err'); $('publishBtn').disabled=false; console.error(t); return; }
+  const j=await r.json(); sha=j.content.sha; setDirty(false);
+  toast('✔ تم النشر — سيظهر في الموقع خلال دقيقة تقريبًا','ok');
+}
+
+/* ---------- أدوات الروابط ---------- */
+function ytId(u){ const m=u.match(/(?:v=|youtu\.be\/|shorts\/|embed\/|live\/)([A-Za-z0-9_-]{11})/); return m?m[1]:null; }
+function normalize(type,u){
+  u=u.trim();
+  if(type==='video'){ const id=ytId(u); if(id) return 'https://www.youtube.com/watch?v='+id; }
+  if(type==='form'){ const m=u.match(/forms\/d\/e\/([A-Za-z0-9_-]+)/); if(m) return 'https://docs.google.com/forms/d/e/'+m[1]+'/viewform'; }
+  if(u && !/^https?:\/\//.test(u)) u='https://'+u;
+  return u;
+}
+
+/* ---------- عرض القائمة ---------- */
+function render(){
+  const q=$('search').value.trim();
+  const list=$('list'); list.innerHTML=''; $('count').textContent=lessons.length;
+  lessons.forEach((ls,i)=>{
+    if(q && !(ls.t+' '+ls.links.map(l=>l.t).join(' ')).includes(q)) return;
+    const el=document.createElement('div'); el.className='lesson';
+    el.innerHTML=`
+      <div class="top">
+        <span class="num">${i+1}</span>
+        <span class="t">${esc(ls.t)}<small>${esc(ls.c||'')} · ${ls.links.length} رابط</small></span>
+      </div>
+      <div class="links">${ls.links.map(l=>`<div class="lk ${l.type}"><span class="dot"></span><span class="lt">${esc(l.t)}</span><a href="${esc(l.u)}" target="_blank" rel="noopener" style="color:var(--muted);font-size:.8rem">فتح</a></div>`).join('')}</div>
+      <div class="ops">
+        <button class="btn ghost sm" data-a="edit">✎ تعديل</button>
+        <button class="btn ghost sm" data-a="up" ${i===0?'disabled':''}>↑ أعلى</button>
+        <button class="btn ghost sm" data-a="down" ${i===lessons.length-1?'disabled':''}>↓ أسفل</button>
+        <button class="btn ghost sm" data-a="top" ${i===0?'disabled':''}>⤒ للقمة</button>
+        <button class="btn danger sm" data-a="del">🗑 حذف</button>
+      </div>`;
+    el.querySelectorAll('[data-a]').forEach(b=>b.addEventListener('click',()=>act(b.dataset.a,i)));
+    list.appendChild(el);
+  });
+}
+function esc(s){ return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function act(a,i){
+  if(a==='edit') openSheet(i);
+  else if(a==='up'&&i>0){ [lessons[i-1],lessons[i]]=[lessons[i],lessons[i-1]]; setDirty(true); render(); }
+  else if(a==='down'&&i<lessons.length-1){ [lessons[i+1],lessons[i]]=[lessons[i],lessons[i+1]]; setDirty(true); render(); }
+  else if(a==='top'){ const [x]=lessons.splice(i,1); lessons.unshift(x); setDirty(true); render(); }
+  else if(a==='del'){ if(confirmBox('حذف درس "'+lessons[i].t+'"؟')){ lessons.splice(i,1); setDirty(true); render(); } }
+}
+function confirmBox(msg){ try{ return window.confirm(msg); }catch(e){ return true; } }
+
+/* ---------- نافذة التحرير ---------- */
+function linkRow(l){
+  const d=document.createElement('div'); d.className='linkEdit';
+  d.innerHTML=`<button class="rm" type="button">حذف</button>
+    <div class="row3">
+      <select class="lType"><option value="video" ${l.type==='video'?'selected':''}>فيديو</option><option value="form" ${l.type==='form'?'selected':''}>رابط درس</option></select>
+      <input class="lTitle" placeholder="عنوان الرابط (مثال: الجزء 1)" value="${esc(l.t||'')}">
+    </div>
+    <input class="lUrl" style="margin-top:8px" placeholder="الصق الرابط هنا" value="${esc(l.u||'')}">`;
+  d.querySelector('.rm').addEventListener('click',()=>d.remove());
+  return d;
+}
+function openSheet(i){
+  editIndex=i; const ls = i>=0?lessons[i]:{t:'',c:'النحو',links:[{type:'video',t:'شرح الدرس',u:''}]};
+  $('sheetTitle').textContent = i>=0?'تعديل الدرس':'إضافة درس';
+  $('fTitle').value=ls.t; $('fCat').value=ls.c||'النحو';
+  $('fPos').parentElement.parentElement.classList.toggle('hidden', i>=0);
+  $('fLinks').innerHTML=''; ls.links.forEach(l=>$('fLinks').appendChild(linkRow(l)));
+  $('overlay').classList.add('show'); setTimeout(()=>$('fTitle').focus(),50);
+}
+function closeSheet(){ $('overlay').classList.remove('show'); }
+function readSheet(){
+  const t=$('fTitle').value.trim(); if(!t){ toast('اكتب عنوان الدرس','err'); return null; }
+  const links=[...$('fLinks').querySelectorAll('.linkEdit')].map(d=>{
+    const type=d.querySelector('.lType').value; const u=normalize(type,d.querySelector('.lUrl').value);
+    const lt=d.querySelector('.lTitle').value.trim()||(type==='video'?'فيديو الشرح':'رابط الدرس');
+    return u?{type,t:lt,u}:null;
+  }).filter(Boolean);
+  if(!links.length){ toast('أضف رابطًا واحدًا على الأقل','err'); return null; }
+  // الفيديوهات أولًا ثم الروابط، مع الحفاظ على ترتيب كل مجموعة
+  links.sort((a,b)=>(a.type==='video'?0:1)-(b.type==='video'?0:1));
+  return {t,c:$('fCat').value,links};
+}
+
+/* ---------- أحداث ---------- */
+function showTab(name){
+  const isS=name==='settings';
+  $('settings').classList.toggle('hidden',!isS); $('lessonsView').classList.toggle('hidden',isS);
+  $('tabSettings').classList.toggle('on',isS); $('tabLessons').classList.toggle('on',!isS);
+}
+$('tabSettings').onclick=()=>showTab('settings'); $('tabLessons').onclick=()=>showTab('lessons');
+$('saveSettings').onclick=()=>{ S.set(readSettingsUI()); toast('تم حفظ الإعدادات','ok'); };
+$('clearSettings').onclick=()=>{ localStorage.removeItem('gh_settings'); ['owner','repo','token'].forEach(k=>$(k).value=''); toast('تم المسح'); };
+$('testConn').onclick=async()=>{ S.set(readSettingsUI()); const s=S.get(); const r=await fetch(`https://api.github.com/repos/${s.owner}/${s.repo}`,{headers:headers()}); toast(r.ok?'✔ الاتصال ناجح':'✖ فشل: '+r.status, r.ok?'ok':'err'); };
+$('reloadBtn').onclick=()=>{ if(dirty && !confirmBox('لديك تغييرات غير منشورة ستُفقد. متابعة؟')) return; loadFromGitHub().catch(e=>toast('خطأ: '+e.message,'err')); };
+$('publishBtn').onclick=()=>publish().catch(e=>toast('خطأ: '+e.message,'err'));
+$('addBtn').onclick=()=>openSheet(-1);
+$('addVideo').onclick=()=>$('fLinks').appendChild(linkRow({type:'video',t:'',u:''}));
+$('addForm').onclick=()=>$('fLinks').appendChild(linkRow({type:'form',t:'',u:''}));
+$('fCancel').onclick=closeSheet;
+$('overlay').addEventListener('click',e=>{ if(e.target===$('overlay')) closeSheet(); });
+$('fSave').onclick=()=>{
+  const ls=readSheet(); if(!ls) return;
+  if(editIndex>=0) lessons[editIndex]=ls;
+  else if($('fPos').value==='top') lessons.unshift(ls); else lessons.push(ls);
+  setDirty(true); render(); closeSheet(); toast('تمت إضافة الدرس — لا تنسَ النشر','ok');
+};
+$('search').addEventListener('input',render);
+window.addEventListener('beforeunload',e=>{ if(dirty){ e.preventDefault(); e.returnValue=''; } });
+
+/* ---------- بدء ---------- */
+loadSettingsUI();
+if(ready()) loadFromGitHub().catch(e=>toast('خطأ: '+e.message,'err')); else showTab('settings');
+</script>
+</body>
+</html>
