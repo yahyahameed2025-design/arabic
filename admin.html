@@ -78,9 +78,9 @@
   <section id="settings" class="card hidden">
     <h2>ربط لوحة التحكم بـ GitHub <span class="badge">مرة واحدة</span></h2>
     <label>اسم المستخدم في GitHub</label>
-    <input id="owner" placeholder="مثال: yahyahameed">
+    <input id="owner" value="yahyahameed2025-design">
     <label>اسم المستودع (Repository)</label>
-    <input id="repo" placeholder="مثال: arabic-lessons">
+    <input id="repo" value="arabic">
     <div class="row">
       <div><label>الفرع (Branch)</label><input id="branch" value="main"></div>
       <div><label>اسم ملف البيانات</label><input id="path" value="lessons.json"></div>
@@ -170,7 +170,11 @@ async function loadFromGitHub(){
   if(!ready()){ toast('أكمل الإعدادات أولًا','err'); showTab('settings'); return; }
   toast('جارٍ التحميل…');
   const r = await fetch(apiUrl()+'?ref='+encodeURIComponent(S.get().branch)+'&t='+Date.now(),{headers:headers(),cache:'no-store'});
-  if(r.status===404){ lessons=[]; sha=null; render(); setDirty(false); toast('الملف غير موجود بعد — سيُنشأ عند أول نشر','ok'); return; }
+  if(r.status===404){
+    const s=S.get(); const rr=await fetch(`https://api.github.com/repos/${s.owner}/${s.repo}`,{headers:headers()});
+    if(!rr.ok){ toast('المستودع غير موجود أو الرمز لا يملك صلاحية عليه — تأكد من اسم المستخدم ('+s.owner+') والمستودع ('+s.repo+') وصلاحية Contents','err'); showTab('settings'); return; }
+    lessons=[]; sha=null; render(); setDirty(false); toast('الملف غير موجود بعد — سيُنشأ عند أول نشر','ok'); return; }
+  if(r.status===401){ toast('الرمز غير صحيح أو منتهي — راجع تبويب الإعدادات','err'); showTab('settings'); return; }
   if(!r.ok){ toast('فشل التحميل: '+r.status+' — تأكد من الإعدادات والرمز','err'); return; }
   const j = await r.json(); sha=j.sha;
   try{ lessons = JSON.parse(b64dec(j.content)); }catch(e){ lessons=[]; }
