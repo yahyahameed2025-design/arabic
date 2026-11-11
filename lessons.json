@@ -2,6 +2,7 @@
  {
   "t": "الاستثناء بغير وسوى",
   "c": "النحو",
+  "g": "3",
   "links": [
    {
     "type": "video",
@@ -13,8 +14,7 @@
     "t": "نشاط حول درس الاستثناء",
     "u": "https://docs.google.com/forms/d/e/1FAIpQLSccsgTMz43moGM6-vPe5quKeRBZqvnrNKkuiKaRLtBuUjG8eQ/viewform"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "اقتران جواب الشرط بالفاء",
@@ -143,14 +143,14 @@
  {
   "t": "قصيدة موطن الخالدين",
   "c": "القصائد",
+  "g": "2",
   "links": [
    {
     "type": "video",
     "t": "شرح الأبيات (10–17)",
     "u": "https://www.youtube.com/watch?v=Lkm5tNLM_xs"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "قصيدة عيد الأم",
@@ -189,14 +189,14 @@
  {
   "t": "كتابة كلمة توعوية",
   "c": "التعبير",
+  "g": "both",
   "links": [
    {
     "type": "video",
     "t": "شرح الدرس",
     "u": "https://www.youtube.com/watch?v=RJdAaw8trsY"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "شرح قواعد نحوية",
@@ -225,6 +225,7 @@
  {
   "t": "قصيدة من أغاني الرعاة",
   "c": "القصائد",
+  "g": "2",
   "links": [
    {
     "type": "video",
@@ -246,24 +247,24 @@
     "t": "من أغاني الرعاة (كاملة)",
     "u": "https://www.youtube.com/watch?v=t_ie1WGFmhQ"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "النداء",
   "c": "النحو",
+  "g": "2",
   "links": [
    {
     "type": "video",
     "t": "شرح الدرس",
     "u": "https://www.youtube.com/watch?v=XJiDiE-nryg"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "التمييز",
   "c": "النحو",
+  "g": "2",
   "links": [
    {
     "type": "video",
@@ -275,8 +276,7 @@
     "t": "التمييز — الجزء 2",
     "u": "https://www.youtube.com/watch?v=Y9sVmM6MZbQ"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "الاستثناء بإلا",
@@ -298,14 +298,14 @@
  {
   "t": "ظرفا الزمان والمكان",
   "c": "النحو",
+  "g": "2",
   "links": [
    {
     "type": "video",
     "t": "شرح الدرس",
     "u": "https://www.youtube.com/watch?v=Leyhg6ijpVg"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "مراجعة الدروس للاختبار الثاني",
@@ -339,62 +339,62 @@
  {
   "t": "اللازم والمتعدي",
   "c": "النحو",
+  "g": "2",
   "links": [
    {
     "type": "video",
     "t": "شرح الدرس",
     "u": "https://www.youtube.com/watch?v=ZqgPRrTA248"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "المفعول معه",
   "c": "النحو",
+  "g": "2",
   "links": [
    {
     "type": "video",
     "t": "شرح الدرس",
     "u": "https://www.youtube.com/watch?v=U8LM4c3GONc"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "المفعول المطلق",
   "c": "النحو",
+  "g": "2",
   "links": [
    {
     "type": "video",
     "t": "شرح الدرس",
     "u": "https://www.youtube.com/watch?v=bbDI6O3OBSE"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "أسلوب التعجب",
   "c": "النحو",
+  "g": "2",
   "links": [
    {
     "type": "form",
     "t": "أسلوب التعجب",
     "u": "https://docs.google.com/forms/d/e/1FAIpQLSffwV0-3d4_i01ir9rx2X1GgW3eaF-lzmG7Ms912epGTL-cFQ/viewform"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "أسلوب الاستفهام",
   "c": "النحو",
+  "g": "2",
   "links": [
    {
     "type": "form",
     "t": "أسلوب الاستفهام",
     "u": "https://docs.google.com/forms/d/e/1FAIpQLSdb5j0k6YdUiRB89OILVg62cAZibIJ6szxD_L3o0Ndigx-MeA/viewform"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "اسم التفضيل",
