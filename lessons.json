@@ -1,5 +1,22 @@
 [
  {
+  "t": "الممنوع من الصرف لعلة واحدة",
+  "c": "النحو",
+  "g": "3",
+  "links": [
+   {
+    "type": "video",
+    "t": "شرح الدرس",
+    "u": "https://www.youtube.com/watch?v=cNRGJgEv0sM"
+   },
+   {
+    "type": "form",
+    "t": "نشاط الممنوع من الصرف لعلة واحدة",
+    "u": "https://docs.google.com/forms/d/e/1FAIpQLSeFW-r7vE--SOQ27u1gv9PQ5bF12n8odBMP4X5QDqwsO9FwVQ/viewform"
+   }
+  ]
+ },
+ {
   "t": "ملخص قصيدة إن الكرام قليل",
   "c": "القصائد",
   "g": "3",
@@ -191,6 +208,7 @@
  {
   "t": "الممنوع من الصرف",
   "c": "النحو",
+  "g": "2",
   "links": [
    {
     "type": "video",
@@ -207,8 +225,7 @@
     "t": "الممنوع من الصرف لعلة واحدة",
     "u": "https://docs.google.com/forms/d/e/1FAIpQLSeFW-r7vE--SOQ27u1gv9PQ5bF12n8odBMP4X5QDqwsO9FwVQ/viewform"
    }
-  ],
-  "g": "3"
+  ]
  },
  {
   "t": "كتابة كلمة توعوية",
